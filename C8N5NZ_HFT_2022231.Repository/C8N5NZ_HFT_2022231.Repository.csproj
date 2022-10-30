@@ -4,20 +4,6 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="musics.mdf" />
-    <None Remove="musics_log.ldf" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="musics.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="musics_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.14" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.14" />
@@ -28,4 +14,8 @@
 		</PackageReference>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\C8N5NZ_HFT_2022231.Models\C8N5NZ_HFT_2022231.Models.csproj" />
+	</ItemGroup>
+	
 </Project>

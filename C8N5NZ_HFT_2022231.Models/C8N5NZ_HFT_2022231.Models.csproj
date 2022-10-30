@@ -4,8 +4,4 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\C8N5NZ_HFT_2022231.Client\C8N5NZ_HFT_2022231.Client.csproj" />
-  </ItemGroup>
-
 </Project>
