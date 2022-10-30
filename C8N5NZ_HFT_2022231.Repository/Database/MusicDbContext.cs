@@ -22,10 +22,8 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
         {
             if (!builder.IsConfigured)
             {
-                string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;
-                                AttachDbFilename=|DataDirectory|\album.mdf;Integrated Security=True;MultipleActiveResultSets=true";
                 builder
-                .UseSqlServer(conn)
+                .UseInMemoryDatabase("music")
                 .UseLazyLoadingProxies();
             }
         }
