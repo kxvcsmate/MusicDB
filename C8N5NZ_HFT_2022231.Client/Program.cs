@@ -1,4 +1,6 @@
-﻿using System;
+﻿using C8N5NZ_HFT_2022231.Repository.Database;
+using System;
+using System.Linq;
 
 namespace C8N5NZ_HFT_2022231.Client
 {
@@ -6,7 +8,9 @@ namespace C8N5NZ_HFT_2022231.Client
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MusicDbContext ctx = new MusicDbContext();
+
+            ctx.Albums.ToList().ForEach(t => Console.WriteLine(t.AlbumTitle));
         }
     }
 }

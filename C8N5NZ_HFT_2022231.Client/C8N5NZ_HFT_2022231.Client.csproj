@@ -17,6 +17,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\C8N5NZ_HFT_2022231.Models\C8N5NZ_HFT_2022231.Models.csproj" />
+	  <ProjectReference Include="..\C8N5NZ_HFT_2022231.Repository\C8N5NZ_HFT_2022231.Repository.csproj" />
 	</ItemGroup>
 	
 </Project>
