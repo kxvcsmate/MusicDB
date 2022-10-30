@@ -25,21 +25,22 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
                 string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;
                                 AttachDbFilename=|DataDirectory|\album.mdf;Integrated Security=True;MultipleActiveResultSets=true";
                 builder
-                .UseSqlServer(conn);
+                .UseSqlServer(conn)
+                .UseLazyLoadingProxies();
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Album>(a => a
-            .HasOne<Artist>()
-            .WithMany()
-            .HasForeignKey(a => a.ArtistId)
+            modelBuilder.Entity<Album>(album => album
+            .HasOne(album => album.Artist)
+            .WithMany(artist => artist.Albums)
+            .HasForeignKey(album => album.ArtistId)
             .OnDelete(DeleteBehavior.Cascade));
 
-            modelBuilder.Entity<Song>(s => s
-            .HasOne<Album>()
-            .WithMany()
-            .HasForeignKey(s => s.AlbumId)
+            modelBuilder.Entity<Song>(song => song
+            .HasOne(song => song.Album)
+            .WithMany(album => album.Songs)
+            .HasForeignKey(song => song.AlbumId)
             .OnDelete(DeleteBehavior.Cascade));
 
             modelBuilder.Entity<Album>().HasData(new Album[]

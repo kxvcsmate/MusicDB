@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace C8N5NZ_HFT_2022231.Models
 {
@@ -18,9 +19,11 @@ namespace C8N5NZ_HFT_2022231.Models
         public int Release { get; set; }
         public int ArtistId { get; set; }
 
+        public virtual Artist Artist { get; set; }
+        public virtual ICollection<Song> Songs { get; set; }
         public Album()
         {
-
+            Songs = new HashSet<Song>();
         }
         public Album(string line)
         {
@@ -31,6 +34,7 @@ namespace C8N5NZ_HFT_2022231.Models
             Release = int.Parse(split[3]);
             Rating = int.Parse(split[4]);
             TrackCount = int.Parse(split[5]);
+            Songs = new HashSet<Song>();
         }
     }
 }

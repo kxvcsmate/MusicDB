@@ -18,6 +18,8 @@ namespace C8N5NZ_HFT_2022231.Models
         [Range(1, 10)]
         public int Length { get; set; }
         public int AlbumId { get; set; }
+        public virtual Album Album { get; set; }
+
         public Song()
         {
 
