@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C8N5NZ_HFT_2022231.Client",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C8N5NZ_HFT_2022231.Models", "C8N5NZ_HFT_2022231.Models\C8N5NZ_HFT_2022231.Models.csproj", "{55EC2E64-938D-486A-AEFB-52B488BDF885}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C8N5NZ_HFT_2022231.Repository", "C8N5NZ_HFT_2022231.Repository\C8N5NZ_HFT_2022231.Repository.csproj", "{3A1DA034-30EF-4E56-B6C9-F10B734BFE3A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{55EC2E64-938D-486A-AEFB-52B488BDF885}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55EC2E64-938D-486A-AEFB-52B488BDF885}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55EC2E64-938D-486A-AEFB-52B488BDF885}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A1DA034-30EF-4E56-B6C9-F10B734BFE3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A1DA034-30EF-4E56-B6C9-F10B734BFE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A1DA034-30EF-4E56-B6C9-F10B734BFE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A1DA034-30EF-4E56-B6C9-F10B734BFE3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
