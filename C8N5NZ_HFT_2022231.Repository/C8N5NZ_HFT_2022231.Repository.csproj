@@ -4,6 +4,20 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="album.mdf" />
+    <None Remove="album_log.ldf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="album.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="album_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.14" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="5.0.14" />
