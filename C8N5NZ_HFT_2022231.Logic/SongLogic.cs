@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace C8N5NZ_HFT_2022231.Logic
 {
-    public class ArtistLogic
+    public class SongLogic
     {
-        IRepository<Artist> repo;
+        IRepository<Song> repo;
 
-        public ArtistLogic(IRepository<Artist> repo)
+        public SongLogic(IRepository<Song> repo)
         {
             this.repo = repo;
         }
 
-        public void Create(Artist item)
+        public void Create(Song item)
         {
             this.repo.Create(item);
         }
@@ -27,17 +27,17 @@ namespace C8N5NZ_HFT_2022231.Logic
             this.repo.Delete(id);
         }
 
-        public Artist Read(int id)
+        public Song Read(int id)
         {
             return this.repo.Read(id);
         }
 
-        public IQueryable<Artist> ReadAll()
+        public IQueryable<Song> ReadAll()
         {
             return this.repo.ReadAll();
         }
 
-        public void Update(Artist item)
+        public void Update(Song item)
         {
             this.repo.Update(item);
         }
