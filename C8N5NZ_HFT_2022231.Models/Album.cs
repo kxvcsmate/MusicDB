@@ -17,6 +17,7 @@ namespace C8N5NZ_HFT_2022231.Models
         [Range(0, 20)]
         public int TrackCount { get; set; }
         public int Release { get; set; }
+        [ForeignKey(nameof(Artist))]
         public int ArtistId { get; set; }
 
         public virtual Artist Artist { get; set; }
