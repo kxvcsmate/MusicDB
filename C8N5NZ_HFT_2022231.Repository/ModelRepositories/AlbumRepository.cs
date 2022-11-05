@@ -1,5 +1,6 @@
 ﻿using C8N5NZ_HFT_2022231.Models;
 using C8N5NZ_HFT_2022231.Repository.Database;
+using C8N5NZ_HFT_2022231.Repository.GenericRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
