@@ -1,8 +1,9 @@
 ﻿using C8N5NZ_HFT_2022231.Repository.Database;
+using C8N5NZ_HFT_2022231.Repository.Intefaces;
 using System;
 using System.Linq;
 
-namespace C8N5NZ_HFT_2022231.Repository
+namespace C8N5NZ_HFT_2022231.Repository.GenericRepository
 {
     public abstract class Repository<T> : IRepository<T> where T : class
     {
