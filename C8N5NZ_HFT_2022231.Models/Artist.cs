@@ -16,10 +16,10 @@ namespace C8N5NZ_HFT_2022231.Models
         [Required]
         [StringLength(240)]
         public string Name { get; set; }
-        public virtual ICollection<Album> Albums { get; set; }
+        public virtual ICollection<Artist> Albums { get; set; }
         public Artist()
         {
-            Albums = new HashSet<Album>();
+            Albums = new HashSet<Artist>();
         }
 
         public Artist(string line)
@@ -27,7 +27,7 @@ namespace C8N5NZ_HFT_2022231.Models
             string[] split = line.Split('#');
             ArtistId = int.Parse(split[0]);
             Name = split[1];
-            Albums = new HashSet<Album>();
+            Albums = new HashSet<Artist>();
         }
     }
 }

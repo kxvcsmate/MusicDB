@@ -1,16 +1,18 @@
-﻿using System;
-using System.Linq;
-using C8N5NZ_HFT_2022231.Models;
-using C8N5NZ_HFT_2022231.Repository;
+﻿using C8N5NZ_HFT_2022231.Models;
 using C8N5NZ_HFT_2022231.Repository.Intefaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace C8N5NZ_HFT_2022231.Logic
 {
-    public class AlbumLogic
+    internal class ArtistLogic
     {
         IRepository<Artist> repo;
 
-        public AlbumLogic(IRepository<Artist> repo)
+        public ArtistLogic(IRepository<Artist> repo)
         {
             this.repo = repo;
         }

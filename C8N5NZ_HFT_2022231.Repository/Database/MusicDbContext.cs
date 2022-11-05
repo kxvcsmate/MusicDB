@@ -10,7 +10,7 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
 {
     public class MusicDbContext : DbContext
     {
-        public DbSet<Album> Albums { get; set; }
+        public DbSet<Artist> Albums { get; set; }
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Song> Songs { get; set; }
 
@@ -29,7 +29,7 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Album>(album => album
+            modelBuilder.Entity<Artist>(album => album
             .HasOne(album => album.Artist)
             .WithMany(artist => artist.Albums)
             .HasForeignKey(album => album.ArtistId)
@@ -41,20 +41,20 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
             .HasForeignKey(song => song.AlbumId)
             .OnDelete(DeleteBehavior.Cascade));
 
-            modelBuilder.Entity<Album>().HasData(new Album[]
+            modelBuilder.Entity<Artist>().HasData(new Artist[]
             {
-                new Album("1#The Fame#1#2008#71#14"),
-                new Album("2#Born This Way#1#2011#71#14"),
-                new Album("3#Chromatica#1#2020#79#16"),
-                new Album("4#Untouchables#2#2002#80#14"),
-                new Album("5#The Nothing#2#2019#83#13"),
-                new Album("6#Requiem#2#2022#77#9"),
-                new Album("7#Blurryface#3#2015#80#14"),
-                new Album("8#Trench#3#2018#81#14"),
-                new Album("9#Scaled and Icy#3#2021#70#11"),
-                new Album("10#Born to Die#4#2012#62#12"),
-                new Album("11#Ultraviolence#4#2014#74#11"),
-                new Album("12#Lust for Life#4#2017#77#16"),
+                new Artist("1#The Fame#1#2008#71#14"),
+                new Artist("2#Born This Way#1#2011#71#14"),
+                new Artist("3#Chromatica#1#2020#79#16"),
+                new Artist("4#Untouchables#2#2002#80#14"),
+                new Artist("5#The Nothing#2#2019#83#13"),
+                new Artist("6#Requiem#2#2022#77#9"),
+                new Artist("7#Blurryface#3#2015#80#14"),
+                new Artist("8#Trench#3#2018#81#14"),
+                new Artist("9#Scaled and Icy#3#2021#70#11"),
+                new Artist("10#Born to Die#4#2012#62#12"),
+                new Artist("11#Ultraviolence#4#2014#74#11"),
+                new Artist("12#Lust for Life#4#2017#77#16"),
             });
             modelBuilder.Entity<Artist>().HasData(new Artist[]
             {
