@@ -16,12 +16,17 @@ namespace C8N5NZ_HFT_2022231.Repository
 
         public override Song Read(int id)
         {
-            throw new NotImplementedException();
+            return ctx.Songs.FirstOrDefault(c => c.SongId == id);
         }
 
         public override void Update(Song item)
         {
-            throw new NotImplementedException();
+            var old = Read(item.SongId);
+            foreach (var prop in old.GetType().GetProperties())
+            {
+                prop.SetValue(old, prop.GetValue(item));
+            }
+            ctx.SaveChanges();
         }
     }
 }
