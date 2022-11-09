@@ -10,7 +10,7 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
 {
     public class MusicDbContext : DbContext
     {
-        public DbSet<Artist> Albums { get; set; }
+        public DbSet<Album> Albums { get; set; }
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Song> Songs { get; set; }
 
