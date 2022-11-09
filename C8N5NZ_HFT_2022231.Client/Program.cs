@@ -11,10 +11,6 @@ namespace C8N5NZ_HFT_2022231.Client
             MusicDbContext ctx = new MusicDbContext();
 
             //ctx.Albums.ToList().ForEach(t => Console.WriteLine(t.AlbumTitle));
-            foreach (var item in ctx.Albums)
-            {
-                Console.WriteLine(item.Artist.Name+ ": "+item.AlbumTitle);
-            }
 
         }
     }

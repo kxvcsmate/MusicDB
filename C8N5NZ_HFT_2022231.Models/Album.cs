@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace C8N5NZ_HFT_2022231.Models
 {
-    public class Artist
+    public class Album
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -22,11 +22,11 @@ namespace C8N5NZ_HFT_2022231.Models
 
         public virtual Artist Artist { get; set; }
         public virtual ICollection<Song> Songs { get; set; }
-        public Artist()
+        public Album()
         {
             Songs = new HashSet<Song>();
         }
-        public Artist(string line)
+        public Album(string line)
         {
             string[] split = line.Split('#');
             AlbumId = int.Parse(split[0]);

@@ -1,21 +1,23 @@
-﻿using System;
-using System.Linq;
-using C8N5NZ_HFT_2022231.Models;
-using C8N5NZ_HFT_2022231.Repository;
+﻿using C8N5NZ_HFT_2022231.Models;
 using C8N5NZ_HFT_2022231.Repository.Intefaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace C8N5NZ_HFT_2022231.Logic
 {
     public class AlbumLogic
     {
-        IRepository<Artist> repo;
+        IRepository<Album> repo;
 
-        public AlbumLogic(IRepository<Artist> repo)
+        public AlbumLogic(IRepository<Album> repo)
         {
             this.repo = repo;
         }
 
-        public void Create(Artist item)
+        public void Create(Album item)
         {
             this.repo.Create(item);
         }
@@ -25,17 +27,17 @@ namespace C8N5NZ_HFT_2022231.Logic
             this.repo.Delete(id);
         }
 
-        public Artist Read(int id)
+        public Album Read(int id)
         {
             return this.repo.Read(id);
         }
 
-        public IQueryable<Artist> ReadAll()
+        public IQueryable<Album> ReadAll()
         {
             return this.repo.ReadAll();
         }
 
-        public void Update(Artist item)
+        public void Update(Album item)
         {
             this.repo.Update(item);
         }

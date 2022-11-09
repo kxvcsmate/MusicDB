@@ -19,7 +19,7 @@ namespace C8N5NZ_HFT_2022231.Models
         public int Length { get; set; }
         [ForeignKey(nameof(Album))]
         public int AlbumId { get; set; }
-        public virtual Artist Album { get; set; }
+        public virtual Album Album { get; set; }
 
         public Song()
         {
