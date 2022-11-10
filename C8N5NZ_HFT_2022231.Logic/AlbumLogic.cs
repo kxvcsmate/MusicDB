@@ -41,5 +41,26 @@ namespace C8N5NZ_HFT_2022231.Logic
         {
             this.repo.Update(item);
         }
+
+        public IEnumerable<ArtistInfo> ArtistStatistics()
+        {
+            return from x in this.repo.ReadAll()
+                   group x by x.Artist.ArtistId into g
+                   select new ArtistInfo()
+                   {
+                       Name = g.Key,
+                       AvgRating = g.Average(t => t.Rating),
+                       AlbumNumber = g.Count(),
+                       SongNumber = g.Sum(t => t.Songs.Count)
+                   };
+        }
+
+        public class ArtistInfo
+        {
+            public int Name { get; set; }
+            public double? AvgRating { get; set; }
+            public int AlbumNumber { get; set; }
+            public int SongNumber { get; set; }
+        }
     }
 }
