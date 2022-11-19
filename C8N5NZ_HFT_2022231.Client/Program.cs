@@ -37,12 +37,25 @@ namespace C8N5NZ_HFT_2022231.Client
             NonCrudService nonCrud = new NonCrudService(rest);
 
             var artistSubMenu = new ConsoleMenu(args, level: 1)
-                .Add("List", () => List("Artist"))
-                .Add("Create", () => Create("Artist"))
-                .Add("Delete", () => Delete("Artist"))
-                .Add("Update", () => Update("Artist"))
+                .Add("List", () => crud.List("Artist"))
+                .Add("Create", () => crud.Create("Artist"))
+                .Add("Delete", () => crud.Delete("Artist"))
+                .Add("Update", () => crud.Update("Artist"))
                 .Add("Exit", ConsoleMenu.Close);
 
+            var albumSubMenu = new ConsoleMenu(args, level: 1)
+                .Add("List", () => crud.List("Album"))
+                .Add("Create", () => crud.Create("Album"))
+                .Add("Delete", () => crud.Delete("Album"))
+                .Add("Update", () => crud.Update("Album"))
+                .Add("Exit", ConsoleMenu.Close);
+
+            var songSubMenu = new ConsoleMenu(args, level: 1)
+                .Add("List", () => crud.List("Song"))
+                .Add("Create", () => crud.Create("Song"))
+                .Add("Delete", () => crud.Delete("Song"))
+                .Add("Update", () => crud.Update("Song"))
+                .Add("Exit", ConsoleMenu.Close);
 
             var menu = new ConsoleMenu(args, level: 0)
                 .Add("Artist", () => artistSubMenu.Show())
