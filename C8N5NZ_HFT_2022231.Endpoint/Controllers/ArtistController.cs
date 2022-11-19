@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace C8N5NZ_HFT_2022231.Endpoint.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class ArtistController : ControllerBase
     {
