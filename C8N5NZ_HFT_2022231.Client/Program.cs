@@ -32,7 +32,7 @@ namespace C8N5NZ_HFT_2022231.Client
             var test6 = slogic.AlbumByLength();
             ;
 
-            RestService rest = new RestService("http://localhost:33531/", typeof(Car).Name);
+            RestService rest = new RestService("http://localhost:33531/", "music");
             CrudService crud = new CrudService(rest);
             NonCrudService nonCrud = new NonCrudService(rest);
 
