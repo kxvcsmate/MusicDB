@@ -10,6 +10,11 @@ namespace C8N5NZ_HFT_2022231.Endpoint.Controllers
     {
         IAlbumLogic logic;
 
+        public AlbumController(IAlbumLogic logic)
+        {
+            this.logic = logic;
+        }
+
         // GET: api/<AlbumController>
         [HttpGet]
         public IEnumerable<string> Get()
