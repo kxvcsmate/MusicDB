@@ -43,17 +43,17 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
 
             modelBuilder.Entity<Album>().HasData(new Album[]
             {
-                new Album("1#The Fame#1#2008#71"),
-                new Album("2#Born This Way#1#2011#71"),
-                new Album("3#Follow the Leader#1#1998#79"),
-                new Album("4#Untouchables#2#2002#80"),
-                new Album("5#The Nothing#2#2019#83"),
-                new Album("6#Requiem#2#2022#77"),
-                new Album("7#Blurryface#3#2015#80"),
-                new Album("8#Trench#3#2018#81"),
-                new Album("9#Scaled and Icy#3#2021#70"),
-                new Album("10#Born to Die#4#2012#62"),
-                new Album("11#Ultraviolence#4#2014#74"),
+                new Album("1#The Fame#1#2008#72,3"),
+                new Album("2#Born This Way#1#2011#77,4"),
+                new Album("3#Follow the Leader#1#1998#79,2"),
+                new Album("4#Untouchables#2#2002#80,1"),
+                new Album("5#The Nothing#2#2019#83,6"),
+                new Album("6#Requiem#2#2022#77,8"),
+                new Album("7#Blurryface#3#2015#80,5"),
+                new Album("8#Trench#3#2018#81,6"),
+                new Album("9#Scaled and Icy#3#2021#70,4"),
+                new Album("10#Born to Die#4#2012#62,8"),
+                new Album("11#Ultraviolence#4#2014#74,4"),
             });
             modelBuilder.Entity<Artist>().HasData(new Artist[]
             {

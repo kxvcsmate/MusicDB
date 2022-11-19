@@ -42,5 +42,13 @@ namespace C8N5NZ_HFT_2022231.Logic
         {
             this.repo.Update(item);
         }
+
+        //NON-CRUD
+        public IEnumerable<KeyValuePair<string,int>> NumberOfAlbumsByArtist()
+        {
+            return from x in this.repo.ReadAll()
+                   select new KeyValuePair<string, int>(x.Name, x.Albums.Count);
+        }
+
     }
 }

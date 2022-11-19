@@ -41,5 +41,13 @@ namespace C8N5NZ_HFT_2022231.Logic
         {
             this.repo.Update(item);
         }
+
+        //NON-CRUD
+        public IEnumerable<KeyValuePair<string, int>> AlbumByLength()
+        {
+            return from x in this.repo.ReadAll()
+                   group x by x.Album.AlbumTitle into g
+                   select new KeyValuePair<string, int>(g.Key, g.Sum(t => t.Length));
+        }
     }
 }

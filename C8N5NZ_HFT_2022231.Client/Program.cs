@@ -16,7 +16,9 @@ namespace C8N5NZ_HFT_2022231.Client
             var repo = new AlbumRepository(ctx);
             var logic = new AlbumLogic(repo);
 
-            var items = logic.ReadAll();
+            var test = logic.NumberOfSongsByAlbum();
+            var test2 = logic.AVGRatingByArtist();
+            var test3 = logic.ArtistWithTheLongestALbum();
             ;
 
         }

@@ -41,26 +41,38 @@ namespace C8N5NZ_HFT_2022231.Logic
         {
             this.repo.Update(item);
         }
-
-        public IEnumerable<ArtistInfo> ArtistStatistics()
+        //NON-CRUD
+        public IEnumerable<KeyValuePair<string, int>> NumberOfSongsByAlbum()
         {
             return from x in this.repo.ReadAll()
-                   group x by x.Artist.ArtistId into g
-                   select new ArtistInfo()
-                   {
-                       Name = g.Key,
-                       AvgRating = g.Average(t => t.Rating),
-                       AlbumNumber = g.Count(),
-                       SongNumber = g.Sum(t => t.Songs.Count)
-                   };
+                   select new KeyValuePair<string, int>(x.AlbumTitle, x.Songs.Count);
         }
-
-        public class ArtistInfo
+        public IEnumerable<KeyValuePair<string, double>> AVGRatingByArtist()
         {
-            public int Name { get; set; }
-            public double? AvgRating { get; set; }
-            public int AlbumNumber { get; set; }
-            public int SongNumber { get; set; }
+            return from x in this.repo.ReadAll()
+                   group x by x.Artist.Name into g
+                   select new KeyValuePair<string, double>(g.Key, g.Average(t => t.Rating));
+        }
+        public string ArtistWithTheLongestALbum()
+        {
+            var input = this.repo.ReadAll();
+            string name = "";
+            var sum = 0;
+            foreach (var item in input)
+            {
+                var length = 0;
+                var songs = item.Songs;
+                foreach (var s in songs)
+                {
+                    length += s.Length;
+                }
+                if (length > sum)
+                {
+                    sum = length;
+                    name = item.Artist.Name;
+                }
+            }
+            return name;
         }
     }
 }

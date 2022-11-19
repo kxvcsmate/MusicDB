@@ -13,7 +13,7 @@ namespace C8N5NZ_HFT_2022231.Models
         [StringLength(240)]
         public string AlbumTitle { get; set; }
         [Range(0, 100)]
-        public int Rating { get; set; }
+        public double Rating { get; set; }
         public int Release { get; set; }
         [ForeignKey(nameof(Artist))]
         public int ArtistId { get; set; }
@@ -31,7 +31,7 @@ namespace C8N5NZ_HFT_2022231.Models
             AlbumTitle = split[1];
             ArtistId = int.Parse(split[2]);
             Release = int.Parse(split[3]);
-            Rating = int.Parse(split[4]);
+            Rating = double.Parse(split[4]);
             Songs = new HashSet<Song>();
         }
     }
