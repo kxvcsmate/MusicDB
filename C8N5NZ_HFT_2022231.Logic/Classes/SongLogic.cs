@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace C8N5NZ_HFT_2022231.Logic
+namespace C8N5NZ_HFT_2022231.Logic.Classes
 {
     public class SongLogic : ISongLogic
     {
@@ -20,33 +20,33 @@ namespace C8N5NZ_HFT_2022231.Logic
 
         public void Create(Song item)
         {
-            this.repo.Create(item);
+            repo.Create(item);
         }
 
         public void Delete(int id)
         {
-            this.repo.Delete(id);
+            repo.Delete(id);
         }
 
         public Song Read(int id)
         {
-            return this.repo.Read(id);
+            return repo.Read(id);
         }
 
         public IQueryable<Song> ReadAll()
         {
-            return this.repo.ReadAll();
+            return repo.ReadAll();
         }
 
         public void Update(Song item)
         {
-            this.repo.Update(item);
+            repo.Update(item);
         }
 
         //NON-CRUD
         public IEnumerable<KeyValuePair<string, int>> AlbumByLength()
         {
-            return from x in this.repo.ReadAll()
+            return from x in repo.ReadAll()
                    group x by x.Album.AlbumTitle into g
                    select new KeyValuePair<string, int>(g.Key, g.Sum(t => t.Length));
         }
