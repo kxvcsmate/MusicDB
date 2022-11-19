@@ -1,4 +1,5 @@
-﻿using C8N5NZ_HFT_2022231.Models;
+﻿using C8N5NZ_HFT_2022231.Logic.Interfaces;
+using C8N5NZ_HFT_2022231.Models;
 using C8N5NZ_HFT_2022231.Repository.Intefaces;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace C8N5NZ_HFT_2022231.Logic
 {
-    public class AlbumLogic
+    public class AlbumLogic : IAlbumLogic
     {
         IRepository<Album> repo;
 
