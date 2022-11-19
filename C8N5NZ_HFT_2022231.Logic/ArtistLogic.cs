@@ -50,5 +50,26 @@ namespace C8N5NZ_HFT_2022231.Logic
                    select new KeyValuePair<string, int>(x.Name, x.Albums.Count);
         }
 
+        public string ArtistWithTheHighestRateALbum()
+        {
+            var input = this.repo.ReadAll();
+            string name = "";
+            double max = 0;
+            foreach (var item in input)
+            {
+                var albums = item.Albums;
+                foreach (var a in albums)
+                {
+                    var rate = a.Rating;
+                    if (rate > max)
+                    {
+                        max = rate;
+                        name = item.Name;
+                    }
+                }
+            }
+            return name;
+        }
+
     }
 }

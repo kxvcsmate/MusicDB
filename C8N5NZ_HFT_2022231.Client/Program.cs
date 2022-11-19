@@ -14,11 +14,19 @@ namespace C8N5NZ_HFT_2022231.Client
         {
             var ctx = new MusicDbContext();
             var repo = new AlbumRepository(ctx);
+            var arepo = new ArtistRepository(ctx);
+            var srepo = new SongRepository(ctx);
             var logic = new AlbumLogic(repo);
+            var alogic = new ArtistLogic(arepo);
+            var slogic = new SongLogic(srepo);
 
             var test = logic.NumberOfSongsByAlbum();
             var test2 = logic.AVGRatingByArtist();
             var test3 = logic.ArtistWithTheLongestALbum();
+
+            var test4 = alogic.NumberOfAlbumsByArtist();
+            var test5 = alogic.ArtistWithTheHighestRateALbum();
+            var test6 = slogic.AlbumByLength();
             ;
 
         }
