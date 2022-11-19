@@ -4,8 +4,10 @@ using C8N5NZ_HFT_2022231.Models;
 using C8N5NZ_HFT_2022231.Repository.Database;
 using C8N5NZ_HFT_2022231.Repository.GenericRepository;
 using C8N5NZ_HFT_2022231.Repository.ModelRepositories;
+using ConsoleTools;
 using System;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 
 namespace C8N5NZ_HFT_2022231.Client
 {
@@ -30,6 +32,23 @@ namespace C8N5NZ_HFT_2022231.Client
             var test6 = slogic.AlbumByLength();
             ;
 
+            RestService rest = new RestService("http://localhost:33531/", typeof(Car).Name);
+            CrudService crud = new CrudService(rest);
+            NonCrudService nonCrud = new NonCrudService(rest);
+
+            var artistSubMenu = new ConsoleMenu(args, level: 1)
+                .Add("List", () => List("Artist"))
+                .Add("Create", () => Create("Artist"))
+                .Add("Delete", () => Delete("Artist"))
+                .Add("Update", () => Update("Artist"))
+                .Add("Exit", ConsoleMenu.Close);
+
+
+            var menu = new ConsoleMenu(args, level: 0)
+                .Add("Artist", () => artistSubMenu.Show())
+                .Add("Albums", () => albumSubMenu.Show())
+                .Add("Songs", () => songSubMenu.Show())
+                .Add("Exit", ConsoleMenu.Close);
         }
     }
 }
