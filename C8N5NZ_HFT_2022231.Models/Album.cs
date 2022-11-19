@@ -34,7 +34,6 @@ namespace C8N5NZ_HFT_2022231.Models
             ArtistId = int.Parse(split[2]);
             Release = int.Parse(split[3]);
             Rating = int.Parse(split[4]);
-            TrackCount = int.Parse(split[5]);
             Songs = new HashSet<Song>();
         }
     }
