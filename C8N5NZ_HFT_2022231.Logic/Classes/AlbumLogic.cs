@@ -48,6 +48,28 @@ namespace C8N5NZ_HFT_2022231.Logic.Classes
             return from x in repo.ReadAll()
                    select new KeyValuePair<string, int>(x.AlbumTitle, x.Songs.Count);
         }
+        public string AlbumWithTheMostSongs()
+        {
+            var input = repo.ReadAll();
+            string name = "";
+            int max = 0;
+            foreach (var item in input)
+            {
+                var db = 0;
+                var song = item.Songs;
+                foreach (var x in song)
+                {
+                    db++;
+                }
+                if (db>max)
+                {
+                    max = db;
+                    name = item.AlbumTitle;
+                }
+            }
+            return name;
+        }
+
         public IEnumerable<KeyValuePair<string, double>> AVGRatingByArtist()
         {
             return from x in repo.ReadAll()

@@ -49,7 +49,6 @@ namespace C8N5NZ_HFT_2022231.Logic.Classes
             return from x in repo.ReadAll()
                    select new KeyValuePair<string, int>(x.Name, x.Albums.Count);
         }
-
         public string ArtistWithTheHighestRateALbum()
         {
             var input = repo.ReadAll();

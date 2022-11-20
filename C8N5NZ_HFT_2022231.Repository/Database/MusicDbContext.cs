@@ -78,7 +78,7 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
                 new Song("12#Brown Eyes#4#1"),
                 new Song("13#I Like It Rough#3#1"),
                 new Song("14#Summerboy#4#1"),
-
+                
                 new Song("15#Marry the Night#4#2"),
                 new Song("16#Born This Way#4#2"),
                 new Song("17#Government Hooker#4#1"),
@@ -91,7 +91,7 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
                 new Song("24#Heavy Metal Lover#4#2"),
                 new Song("25#You and I#5#2"),
                 new Song("26#The Edge of Glory#5#2"),
-
+                
                 new Song("27#It's On#4#3"),
                 new Song("28#Freak on a Leash#4#3"),
                 new Song("29#Got the Life#4#3"),
@@ -106,7 +106,7 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
                 new Song("38#Cameltosis#5#3"),
                 new Song("39#My Gift to You#7#3"),
                 new Song("40#Earache My Eye#5#3"),
-
+                
                 new Song("41#Here to Stay#4#4"),
                 new Song("42#Make Believe#4#4"),
                 new Song("43#Blame#4#4"),
@@ -121,7 +121,7 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
                 new Song("52#Wake Up Hate#3#4"),
                 new Song("53#I'm Hiding#4#4"),
                 new Song("54#No One's There#5#4"),
-
+                
                 new Song("55#The End Begins#2#5"),
                 new Song("56#Cold#4#5"),
                 new Song("57#You'll Never Find Me#4#5"),
@@ -135,7 +135,7 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
                 new Song("65#Harder#5#5"),
                 new Song("66#This Loss#5#5"),
                 new Song("67#Surrender to Failure#2#5"),
-
+                
                 new Song("68#Forgotten#3#6"),
                 new Song("69#Let The Dark Do the Rest#3#6"),
                 new Song("70#Start the Healing#3#6"),
@@ -145,7 +145,7 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
                 new Song("74#Penance to Sorrow#3#6"),
                 new Song("75#My Confession#3#6"),
                 new Song("76#Worst Is on Its Way#4#6"),
-
+                
                 new Song("77#Heavydirtysoul#4#7"),
                 new Song("78#Stressed Out#3#7"),
                 new Song("79#Ride#3#7"),
@@ -159,7 +159,7 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
                 new Song("87#Hometown#4#7"),
                 new Song("88#Not Today#4#7"),
                 new Song("89#Goner#4#7"),
-
+                
                 new Song("90#Jumpsuit#4#8"),
                 new Song("91#Levitate#2#8"),
                 new Song("92#Morph#4#8"),
@@ -174,7 +174,7 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
                 new Song("101#et Cheetah#3#8"),
                 new Song("102#Legend#3#8"),
                 new Song("103#Leave the City#5#8"),
-
+                
                 new Song("104#Good Day#3#9"),
                 new Song("105#Choker#4#9"),
                 new Song("106#Shy Away#3#9"),
@@ -186,7 +186,7 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
                 new Song("112#Bounce Man#3#9"),
                 new Song("113#No Chances#4#9"),
                 new Song("114#Redecorate#4#9"),
-
+                
                 new Song("115#Born to Die#5#10"),
                 new Song("116#Off to the Races#5#10"),
                 new Song("117#Blue Jeans#3#10"),
@@ -199,7 +199,7 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
                 new Song("124#Million Dollar Man#4#10"),
                 new Song("125#Summertime Sadness#4#10"),
                 new Song("126#This is What Makes Us Girls#4#10"),
-
+                
                 new Song("127#Cruel World#6#11"),
                 new Song("128#Ultraviolence#4#11"),
                 new Song("129#Shades of Cool#6#11"),
@@ -211,6 +211,11 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
                 new Song("135#Fucked My Way Up to the Top#3#11"),
                 new Song("136#Old Money#4#11"),
                 new Song("137#The Other Woman#3#11"),
+                new Song("138#Black Beauty#5#11"),
+                new Song("139#Guns and Roses#3#11"),
+                new Song("140#Florida Kilos#4#11"),
+                new Song("141#Is This Happiness#3#11"),
+                new Song("142#Flipside#5#11"),
             });
         }
     }
