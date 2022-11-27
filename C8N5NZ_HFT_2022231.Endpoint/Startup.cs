@@ -1,3 +1,9 @@
+using C8N5NZ_HFT_2022231.Logic.Classes;
+using C8N5NZ_HFT_2022231.Logic.Interfaces;
+using C8N5NZ_HFT_2022231.Models;
+using C8N5NZ_HFT_2022231.Repository.Database;
+using C8N5NZ_HFT_2022231.Repository.Intefaces;
+using C8N5NZ_HFT_2022231.Repository.ModelRepositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -28,11 +34,13 @@ namespace C8N5NZ_HFT_2022231.Endpoint
         {
             services.AddTransient<MusicDbContext>();
 
-            services.AddTransient<IRepository<Car>, CarRepository>();
-            services.AddTransient<IRepository<Brand>, BrandRepository>();
+            services.AddTransient<IRepository<Album>, AlbumRepository>();
+            services.AddTransient<IRepository<Artist>, ArtistRepository>();
+            services.AddTransient<IRepository<Song>, SongRepository>();
 
-            services.AddTransient<ICarLogic, CarLogic>();
-            services.AddTransient<IBrandLogic, BrandLogic>();
+            services.AddTransient<IAlbumLogic, AlbumLogic>();
+            services.AddTransient<IArtistLogic, ArtistLogic>();
+            services.AddTransient<ISongLogic, SongLogic>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
