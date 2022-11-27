@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace C8N5NZ_HFT_2022231.Models
 {
@@ -16,6 +17,7 @@ namespace C8N5NZ_HFT_2022231.Models
         [Required]
         [StringLength(240)]
         public string Name { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Album> Albums { get; set; }
         public Artist()
         {

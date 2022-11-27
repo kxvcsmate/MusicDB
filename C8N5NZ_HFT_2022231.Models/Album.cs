@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace C8N5NZ_HFT_2022231.Models
 {
@@ -17,8 +18,8 @@ namespace C8N5NZ_HFT_2022231.Models
         public int Release { get; set; }
         [ForeignKey(nameof(Artist))]
         public int ArtistId { get; set; }
-
         public virtual Artist Artist { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Song> Songs { get; set; }
         public Album()
         {
