@@ -59,7 +59,7 @@ namespace C8N5NZ_HFT_2022231.Client
                  .Add("Update", () => crud.Update<Song>())
                  .Add("Exit", ConsoleMenu.Close);
 
-            var crudSubMenu = new ConsoleMenu(args, level: 1)
+            var ncrudSubMenu = new ConsoleMenu(args, level: 1)
                 .Add("Album with the most songs", () => nonCrud.AlbumWithTheMostSongs())
                 .Add("Artist with the longest aLbum", () => nonCrud.ArtistWithTheLongestALbum())
                 .Add("Artist with the highest rate aLbum", () => nonCrud.ArtistWithTheHighestRateALbum())
@@ -71,7 +71,7 @@ namespace C8N5NZ_HFT_2022231.Client
                 .Add("Albums", () => albumSubMenu.Show())
                 .Add("Artists", () => artistSubMenu.Show())
                 .Add("Songs", () => songSubMenu.Show())
-                .Add("Non-CRUD", () => crudSubMenu.Show())
+                .Add("Non-CRUD", () => ncrudSubMenu.Show())
                 .Add("Exit", ConsoleMenu.Close);
 
             menu.Show();
