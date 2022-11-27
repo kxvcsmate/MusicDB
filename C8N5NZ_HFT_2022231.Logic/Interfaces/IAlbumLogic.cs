@@ -7,6 +7,7 @@ namespace C8N5NZ_HFT_2022231.Logic.Interfaces
     public interface IAlbumLogic
     {
         string ArtistWithTheLongestALbum();
+        string AlbumWithTheMostSongs();
         IEnumerable<KeyValuePair<string, double>> AVGRatingByArtist();
         void Create(Album item);
         void Delete(int id);
