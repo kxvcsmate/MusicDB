@@ -3,6 +3,8 @@ using C8N5NZ_HFT_2022231.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 namespace C8N5NZ_HFT_2022231.Endpoint.Controllers
 {
     [Route("[controller]")]
@@ -10,7 +12,6 @@ namespace C8N5NZ_HFT_2022231.Endpoint.Controllers
     public class AlbumController : ControllerBase
     {
         IAlbumLogic logic;
-
         public AlbumController(IAlbumLogic logic)
         {
             this.logic = logic;
@@ -29,13 +30,13 @@ namespace C8N5NZ_HFT_2022231.Endpoint.Controllers
         }
 
         [HttpPost]
-        public void Creat([FromBody] Album value)
+        public void Create([FromBody] Album value)
         {
             this.logic.Create(value);
         }
 
         [HttpPut]
-        public void Update([FromBody] Album value)
+        public void Put([FromBody] Album value)
         {
             this.logic.Update(value);
         }
