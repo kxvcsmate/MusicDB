@@ -28,5 +28,14 @@ namespace C8N5NZ_HFT_2022231.Test
             }.AsQueryable());
             logic = new AlbumLogic(mockRepo.Object);
         }
+
+        [Test]
+        public void AlbumWithTheMostSongsTester()
+        {
+            var result = logic.AlbumWithTheMostSongs();
+
+            Assert.That(result, Is.EqualTo("Ultraviolence"));
+        }
+
     }
 }
