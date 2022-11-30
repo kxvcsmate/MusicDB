@@ -7,6 +7,7 @@ namespace C8N5NZ_HFT_2022231.Logic.Interfaces
     public interface ISongLogic
     {
         IEnumerable<KeyValuePair<string, int>> AlbumByLength();
+        IEnumerable<Song> GetSongsByLength(int length);
         void Create(Song item);
         void Delete(int id);
         Song Read(int id);

@@ -1,7 +1,9 @@
 ﻿using C8N5NZ_HFT_2022231.Models;
+using C8N5NZ_HFT_2022231.Models.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,16 +17,36 @@ namespace C8N5NZ_HFT_2022231.Client
         {
             this.rest = rest;
         }
-        public void AlbumWithTheMostSongs()
+
+        public void NumberOfSongsByAlbum()
         {
-            var result = rest.GetSingle<string>("Stat/AlbumWithTheMostSongs");
-            Console.WriteLine($"Album with the most songs: {result}");
+            var items = rest.Get<AlbumStat>("Stat/NumberOfSongsByAlbum");
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
             Console.ReadLine();
         }
-        public void ArtistWithTheLongestALbum()
+
+        public void NumberOfAlbumsByArtist()
         {
-            var result = rest.GetSingle<string>("Stat/ArtistWithTheLongestALbum");
-            Console.WriteLine($"Artist with the longest aLbum: {result}");
+            var items = rest.Get<ArtistStat>("Stat/NumberOfAlbumsByArtist");
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
+        }
+        public void GetSongsByLength()
+        {
+            Console.WriteLine("Length=");
+            int length = int.Parse(Console.ReadLine());
+
+            var items = rest.Get<Song>($"Stat/GetSongsByLength?length={length}");
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
             Console.ReadLine();
         }
         public void AVGRatingByArtist()
@@ -34,12 +56,6 @@ namespace C8N5NZ_HFT_2022231.Client
             {
                 Console.WriteLine(item);
             }
-            Console.ReadLine();
-        }
-        public void ArtistWithTheHighestRateALbum()
-        {
-            var result = rest.GetSingle<string>("Stat/ArtistWithTheHighestRateALbum");
-            Console.WriteLine($"Artist with the highest rate aLbum: {result}");
             Console.ReadLine();
         }
         public void AlbumByLength()

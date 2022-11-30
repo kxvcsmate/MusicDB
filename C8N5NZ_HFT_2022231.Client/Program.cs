@@ -15,25 +15,6 @@ namespace C8N5NZ_HFT_2022231.Client
     {
         static void Main(string[] args)
         {
-            var ctx = new MusicDbContext();
-            var repo = new AlbumRepository(ctx);
-            var arepo = new ArtistRepository(ctx);
-            var srepo = new SongRepository(ctx);
-            var logic = new AlbumLogic(repo);
-            var alogic = new ArtistLogic(arepo);
-            var slogic = new SongLogic(srepo);
-
-            var test = logic.NumberOfSongsByAlbum();
-            var testt = logic.AlbumWithTheMostSongs();
-
-            var test2 = logic.AVGRatingByArtist();
-            var test3 = logic.ArtistWithTheLongestALbum();
-
-            var test4 = alogic.NumberOfAlbumsByArtist();
-            var test5 = alogic.ArtistWithTheHighestRateALbum();
-            var test6 = slogic.AlbumByLength();
-            ;
-
             RestService rest = new RestService("http://localhost:53770/", "music");
             CrudService crud = new CrudService(rest);
             NonCrudService nonCrud = new NonCrudService(rest);
@@ -60,9 +41,9 @@ namespace C8N5NZ_HFT_2022231.Client
                  .Add("Exit", ConsoleMenu.Close);
 
             var ncrudSubMenu = new ConsoleMenu(args, level: 1)
-                .Add("Album with the most songs", () => nonCrud.AlbumWithTheMostSongs())
-                .Add("Artist with the longest aLbum", () => nonCrud.ArtistWithTheLongestALbum())
-                .Add("Artist with the highest rate aLbum", () => nonCrud.ArtistWithTheHighestRateALbum())
+                .Add("Artist statistics", () => nonCrud.NumberOfAlbumsByArtist())
+                .Add("Album statistics", () => nonCrud.NumberOfSongsByAlbum())
+                .Add("Songs by length", () => nonCrud.GetSongsByLength())
                 .Add("Average ratings by Artist", () => nonCrud.AVGRatingByArtist())
                 .Add("Albums by Length", () => nonCrud.AlbumByLength())
                 .Add("Exit", ConsoleMenu.Close);

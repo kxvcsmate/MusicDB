@@ -1,6 +1,8 @@
 ﻿using C8N5NZ_HFT_2022231.Logic.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using C8N5NZ_HFT_2022231.Models.DTOs;
+using C8N5NZ_HFT_2022231.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,21 +24,15 @@ namespace C8N5NZ_HFT_2022231.Endpoint.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<KeyValuePair<string, int>> NumberOfSongsByAlbum()
+        public IEnumerable<AlbumStat> NumberOfSongsByAlbum()
         {
             return albumLogic.NumberOfSongsByAlbum();
         }
 
         [HttpGet]
-        public string AlbumWithTheMostSongs()
+        public IEnumerable<ArtistStat> NumberOfAlbumsByArtist()
         {
-            return albumLogic.AlbumWithTheMostSongs();
-        }
-
-        [HttpGet]
-        public string ArtistWithTheLongestALbum()
-        {
-            return albumLogic.ArtistWithTheLongestALbum();
+            return artistLogic.NumberOfAlbumsByArtist();
         }
 
         [HttpGet]
@@ -46,21 +42,15 @@ namespace C8N5NZ_HFT_2022231.Endpoint.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<KeyValuePair<string, int>> NumberOfAlbumsByArtist()
-        {
-            return artistLogic.NumberOfAlbumsByArtist();
-        }
-
-        [HttpGet]
-        public string ArtistWithTheHighestRateALbum()
-        {
-            return artistLogic.ArtistWithTheHighestRateALbum();
-        }
-
-        [HttpGet]
         public IEnumerable<KeyValuePair<string, int>> AlbumByLength()
         {
             return songLogic.AlbumByLength();
+        }
+
+        [HttpGet]
+        public IEnumerable<Song> GetCarsByPriceRange([FromQuery] int length)
+        {
+            return songLogic.GetSongsByLength(length);
         }
     }
 }

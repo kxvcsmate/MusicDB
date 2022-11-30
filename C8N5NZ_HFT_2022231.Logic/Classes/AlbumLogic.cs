@@ -1,5 +1,6 @@
 ﻿using C8N5NZ_HFT_2022231.Logic.Interfaces;
 using C8N5NZ_HFT_2022231.Models;
+using C8N5NZ_HFT_2022231.Models.DTOs;
 using C8N5NZ_HFT_2022231.Repository.Intefaces;
 using System;
 using System.Collections.Generic;
@@ -43,31 +44,15 @@ namespace C8N5NZ_HFT_2022231.Logic.Classes
             repo.Update(item);
         }
         //NON-CRUD
-        public IEnumerable<KeyValuePair<string, int>> NumberOfSongsByAlbum()
+        public IEnumerable<AlbumStat> NumberOfSongsByAlbum()
         {
-            return from x in repo.ReadAll()
-                   select new KeyValuePair<string, int>(x.AlbumTitle, x.Songs.Count);
-        }
-        public string AlbumWithTheMostSongs()
-        {
-            var input = repo.ReadAll();
-            string name = "";
-            int max = 0;
-            foreach (var item in input)
-            {
-                var db = 0;
-                var song = item.Songs;
-                foreach (var x in song)
-                {
-                    db++;
-                }
-                if (db>max)
-                {
-                    max = db;
-                    name = item.AlbumTitle;
-                }
-            }
-            return name;
+            var albumStats = from x in this.repo.ReadAll()
+                             select new AlbumStat()
+                             {
+                                 AlbumTitle = x.AlbumTitle,
+                                 SongCount = x.Songs.Count,
+                             };
+            return albumStats;
         }
 
         public IEnumerable<KeyValuePair<string, double>> AVGRatingByArtist()
@@ -75,27 +60,6 @@ namespace C8N5NZ_HFT_2022231.Logic.Classes
             return from x in repo.ReadAll()
                    group x by x.Artist.Name into g
                    select new KeyValuePair<string, double>(g.Key, g.Average(t => t.Rating));
-        }
-        public string ArtistWithTheLongestALbum()
-        {
-            var input = repo.ReadAll();
-            string name = "";
-            var sum = 0;
-            foreach (var item in input)
-            {
-                var length = 0;
-                var songs = item.Songs;
-                foreach (var s in songs)
-                {
-                    length += s.Length;
-                }
-                if (length > sum)
-                {
-                    sum = length;
-                    name = item.Artist.Name;
-                }
-            }
-            return name;
         }
     }
 }

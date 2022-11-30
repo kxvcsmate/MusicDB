@@ -4,6 +4,7 @@ using C8N5NZ_HFT_2022231.Repository.Intefaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -49,6 +50,13 @@ namespace C8N5NZ_HFT_2022231.Logic.Classes
             return from x in repo.ReadAll()
                    group x by x.Album.AlbumTitle into g
                    select new KeyValuePair<string, int>(g.Key, g.Sum(t => t.Length));
+        }
+
+        public IEnumerable<Song> GetSongsByLength(int length)
+        {
+            return from x in repo.ReadAll()
+                   where length == x.Length
+                   select x;
         }
     }
 }
