@@ -10,13 +10,13 @@ namespace C8N5NZ_HFT_2022231.Endpoint.Controllers
 {
     [Route("[controller]/[action]")]
     [ApiController]
-    public class NCrudController : ControllerBase
+    public class StatController : ControllerBase
     {
         IAlbumLogic albumLogic;
         IArtistLogic artistLogic;
         ISongLogic songLogic;
 
-        public NCrudController(IAlbumLogic albumLogic, IArtistLogic artistLogic, ISongLogic songLogic)
+        public StatController(IAlbumLogic albumLogic, IArtistLogic artistLogic, ISongLogic songLogic)
         {
             this.albumLogic = albumLogic;
             this.artistLogic = artistLogic;

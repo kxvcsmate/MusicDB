@@ -10,7 +10,7 @@ namespace C8N5NZ_HFT_2022231.Client
     {
         static void Main(string[] args)
         {
-            RestService rest = new RestService("http://localhost:53770/", "music");
+            RestService rest = new RestService("http://localhost:53770/", typeof(Artist).Name);
             CrudService crud = new CrudService(rest);
             NonCrudService nonCrud = new NonCrudService(rest);
 
