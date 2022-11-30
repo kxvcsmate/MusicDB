@@ -49,10 +49,10 @@ namespace C8N5NZ_HFT_2022231.Repository.Database
                 new Album("4#Untouchables#2#2002#80"),
                 new Album("5#The Nothing#2#2019#83"),
                 new Album("6#Requiem#2#2022#77"),
-                new Album("7#Blurryface#3#2015#80"),
-                new Album("8#Trench#3#2018#81"),
-                new Album("9#Scaled and Icy#3#2021#70"),
-                new Album("10#Born to Die#4#2012#62"),
+                new Album("7#Blurryface#3#2015#81"),
+                new Album("8#Trench#3#2018#79"),
+                new Album("9#Scaled and Icy#3#2021#74"),
+                new Album("10#Born to Die#4#2012#67"),
                 new Album("11#Ultraviolence#4#2014#74"),
             });
             modelBuilder.Entity<Artist>().HasData(new Artist[]

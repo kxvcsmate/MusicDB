@@ -48,7 +48,7 @@ namespace C8N5NZ_HFT_2022231.Endpoint.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Song> GetCarsByPriceRange([FromQuery] int length)
+        public IEnumerable<Song> GetSongsByLength([FromQuery] int length)
         {
             return songLogic.GetSongsByLength(length);
         }
