@@ -45,13 +45,13 @@ namespace C8N5NZ_HFT_2022231.Client
             var items = rest.Get<Song>($"Stat/GetSongsByLength?length={length}");
             foreach (var item in items)
             {
-                Console.WriteLine(item);
+                Console.WriteLine("Title: " + item.SongTitle + ", " + "Artist: " + item.Album.Artist.Name);
             }
             Console.ReadLine();
         }
         public void AVGRatingByArtist()
         {
-            var items = rest.Get<Artist>("Stat/AVGRatingByArtist");
+            var items = rest.Get<AVGRating>("Stat/AVGRatingByArtist");
             foreach (var item in items)
             {
                 Console.WriteLine(item);
@@ -60,7 +60,7 @@ namespace C8N5NZ_HFT_2022231.Client
         }
         public void AlbumByLength()
         {
-            var items = rest.Get<Album>("Stat/AlbumByLength");
+            var items = rest.Get<AlbumLengthStat>("Stat/AlbumByLength");
             foreach (var item in items)
             {
                 Console.WriteLine(item);

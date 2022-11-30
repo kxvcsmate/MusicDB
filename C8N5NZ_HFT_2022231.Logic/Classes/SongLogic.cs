@@ -1,5 +1,6 @@
 ﻿using C8N5NZ_HFT_2022231.Logic.Interfaces;
 using C8N5NZ_HFT_2022231.Models;
+using C8N5NZ_HFT_2022231.Models.DTOs;
 using C8N5NZ_HFT_2022231.Repository.Intefaces;
 using System;
 using System.Collections.Generic;
@@ -45,12 +46,17 @@ namespace C8N5NZ_HFT_2022231.Logic.Classes
         }
 
         //NON-CRUD
-        public IEnumerable<KeyValuePair<string, int>> AlbumByLength()
+        public IEnumerable<AlbumLengthStat> AlbumByLength()
         {
-            return from x in repo.ReadAll()
-                   group x by x.Album.AlbumTitle into g
-                   select new KeyValuePair<string, int>(g.Key, g.Sum(t => t.Length));
-        }
+            var lngth = from x in repo.ReadAll()
+                        group x by x.Album.AlbumTitle into g
+                        select new AlbumLengthStat()
+                        {
+                            AlbumTitle = g.Key,
+                            Length = g.Sum(t => t.Length)
+                        };
+            return lngth;
+    }
 
         public IEnumerable<Song> GetSongsByLength(int length)
         {

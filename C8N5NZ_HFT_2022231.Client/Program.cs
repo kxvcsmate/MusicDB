@@ -36,8 +36,8 @@ namespace C8N5NZ_HFT_2022231.Client
                  .Add("Exit", ConsoleMenu.Close);
 
             var ncrudSubMenu = new ConsoleMenu(args, level: 1)
-                .Add("Artist statistics", () => nonCrud.NumberOfAlbumsByArtist())
-                .Add("Album statistics", () => nonCrud.NumberOfSongsByAlbum())
+                .Add("Number of Albums by Artist", () => nonCrud.NumberOfAlbumsByArtist())
+                .Add("Number of Songs by Album", () => nonCrud.NumberOfSongsByAlbum())
                 .Add("Songs by length", () => nonCrud.GetSongsByLength())
                 .Add("Average ratings by Artist", () => nonCrud.AVGRatingByArtist())
                 .Add("Albums by Length", () => nonCrud.AlbumByLength())

@@ -8,7 +8,7 @@ namespace C8N5NZ_HFT_2022231.Logic.Interfaces
 {
     public interface IAlbumLogic
     {
-        IEnumerable<KeyValuePair<string, double>> AVGRatingByArtist();
+        IEnumerable<AVGRating> AVGRatingByArtist();
         IEnumerable<AlbumStat> NumberOfSongsByAlbum();
         void Create(Album item);
         void Delete(int id);

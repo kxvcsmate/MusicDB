@@ -55,11 +55,16 @@ namespace C8N5NZ_HFT_2022231.Logic.Classes
             return albumStats;
         }
 
-        public IEnumerable<KeyValuePair<string, double>> AVGRatingByArtist()
+        public IEnumerable<AVGRating> AVGRatingByArtist()
         {
-            return from x in repo.ReadAll()
+            var avg = from x in repo.ReadAll()
                    group x by x.Artist.Name into g
-                   select new KeyValuePair<string, double>(g.Key, g.Average(t => t.Rating));
+                   select new AVGRating()
+                   {
+                       ArtistName = g.Key,
+                       avgRating = g.Average(t => t.Rating)
+                   };
+            return avg;
         }
     }
 }

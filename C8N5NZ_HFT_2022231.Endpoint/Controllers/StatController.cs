@@ -36,13 +36,13 @@ namespace C8N5NZ_HFT_2022231.Endpoint.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<KeyValuePair<string,double>> AVGRatingByArtist()
+        public IEnumerable<AVGRating> AVGRatingByArtist()
         {
             return albumLogic.AVGRatingByArtist();
         }
 
         [HttpGet]
-        public IEnumerable<KeyValuePair<string, int>> AlbumByLength()
+        public IEnumerable<AlbumLengthStat> AlbumByLength()
         {
             return songLogic.AlbumByLength();
         }
