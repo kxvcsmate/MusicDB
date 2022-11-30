@@ -1,9 +1,4 @@
-﻿using C8N5NZ_HFT_2022231.Logic;
-using C8N5NZ_HFT_2022231.Logic.Classes;
-using C8N5NZ_HFT_2022231.Models;
-using C8N5NZ_HFT_2022231.Repository.Database;
-using C8N5NZ_HFT_2022231.Repository.GenericRepository;
-using C8N5NZ_HFT_2022231.Repository.ModelRepositories;
+﻿using C8N5NZ_HFT_2022231.Models;
 using ConsoleTools;
 using System;
 using System.Linq;
