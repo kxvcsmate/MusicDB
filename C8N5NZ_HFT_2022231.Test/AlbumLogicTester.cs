@@ -32,6 +32,7 @@ namespace C8N5NZ_HFT_2022231.Test
             album1 = new Album()
             {
                 AlbumTitle = "AlbumA",
+                AlbumId= 1,
                 Rating = 64,
                 Release = 2009,
                 Artist = fakeArtist,
@@ -48,6 +49,7 @@ namespace C8N5NZ_HFT_2022231.Test
             album2 = new Album()
             {
                 AlbumTitle = "AlbumB",
+                AlbumId= 2,
                 Rating = 73,
                 Release = 2008,
                 Artist = fakeArtist,
@@ -69,6 +71,7 @@ namespace C8N5NZ_HFT_2022231.Test
             album3 = new Album()
             {
                 AlbumTitle = "AlbumC",
+                AlbumId= 3,
                 Rating = 82,
                 Release = 2009,
                 Artist = fakeArtist,
@@ -124,6 +127,51 @@ namespace C8N5NZ_HFT_2022231.Test
             var result = logic.NumberOfSongsByAlbum();
 
             Assert.That(result.First(), Is.EqualTo(albumStat));
+        }
+
+        [Test]
+        public void CreateTest()
+        {
+            Album album4 = new Album()
+            {
+                AlbumTitle = "AlbumTest",
+                AlbumId = 4,
+                Rating = 66,
+                Release = 2010,
+                Artist = fakeArtist,
+                Songs= new List<Song>()
+            };
+
+            Assert.That(() => logic.Create(album4), Throws.Nothing);
+        }
+
+        [Test]
+        public void DeleteTest()
+        {
+            Assert.That(() => logic.Delete(1), Throws.Nothing);
+        }
+
+        [Test]
+        public void UpdateTest()
+        {
+            album1 = new Album()
+            {
+                AlbumTitle = "AlbumTest",
+                AlbumId = 1,
+                Rating = 64,
+                Release = 2009,
+                Artist = fakeArtist,
+                Songs = new List<Song>()
+                {
+                    new Song()
+                    {
+                        SongTitle = "A",
+                        Length= 4,
+                    }
+                }
+            };
+
+            Assert.That(() => logic.Update(album1), Throws.Nothing);
         }
     }
 }

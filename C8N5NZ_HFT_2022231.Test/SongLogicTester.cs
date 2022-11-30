@@ -42,6 +42,7 @@ namespace C8N5NZ_HFT_2022231.Test
             song1 = new Song()
             {
                 SongTitle ="FakeTitle1",
+                SongId = 1,
                 Length = 3,
                 Album = fakeAlbum1
             };
@@ -49,6 +50,7 @@ namespace C8N5NZ_HFT_2022231.Test
             song2 = new Song()
             {
                 SongTitle = "FakeTitle2",
+                SongId= 2,
                 Length = 4,
                 Album = fakeAlbum1
             };
@@ -56,6 +58,7 @@ namespace C8N5NZ_HFT_2022231.Test
             song3 = new Song()
             {
                 SongTitle = "FakeTitle3",
+                SongId= 3,
                 Length = 5,
                 Album = fakeAlbum1
             };
@@ -63,6 +66,7 @@ namespace C8N5NZ_HFT_2022231.Test
             song4 = new Song()
             {
                 SongTitle = "FakeTitle4",
+                SongId= 4,
                 Length = 2,
                 Album = fakeAlbum2
             };
@@ -70,6 +74,7 @@ namespace C8N5NZ_HFT_2022231.Test
             song5 = new Song()
             {
                 SongTitle = "FakeTitle5",
+                SongId= 5,
                 Length = 6,
                 Album = fakeAlbum2
             };
@@ -103,6 +108,40 @@ namespace C8N5NZ_HFT_2022231.Test
             mockRepo.Verify(mockRepo => mockRepo.ReadAll(), Times.Once());
             Assert.That(songs, Has.Exactly(1).Items);
             Assert.That(songs.First(), Is.EqualTo(song1));
+        }
+
+        [Test]
+        public void CreateTest()
+        {
+            Song song6 = new Song()
+            {
+                SongTitle = "Test",
+                SongId= 6,
+                Length = 4,
+                Album = fakeAlbum1
+            };
+
+            Assert.That(() => logic.Create(song6), Throws.Nothing);
+        }
+
+        [Test]
+        public void DeleteTest()
+        {
+            Assert.That(() => logic.Delete(1), Throws.Nothing);
+        }
+
+        [Test]
+        public void UpdateTest()
+        {
+            song1 = new Song()
+            {
+                SongTitle = "Test",
+                SongId = 1,
+                Length = 3,
+                Album = fakeAlbum1
+            };
+
+            Assert.That(() => logic.Update(song1), Throws.Nothing);
         }
     }
 }

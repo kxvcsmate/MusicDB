@@ -43,6 +43,7 @@ namespace C8N5NZ_HFT_2022231.Test
             fakeArtist1 = new Artist()
             {
                 Name = "Eminem",
+                ArtistId = 1,
                 Albums = new List<Album>()
                 {
                     album1,
@@ -53,6 +54,7 @@ namespace C8N5NZ_HFT_2022231.Test
             fakeArtist2 = new Artist()
             {
                 Name = "Rihanna",
+                ArtistId = 2,
                 Albums = new List<Album>()
                 {
                     album3,
@@ -82,6 +84,42 @@ namespace C8N5NZ_HFT_2022231.Test
             var result = logic.NumberOfAlbumsByArtist();
 
             Assert.That(result.First(), Is.EqualTo(artistStat));
+        }
+
+        [Test]
+        public void CreateTest()
+        {
+            Artist fakeArtsit3 = new Artist()
+            {
+                Name = "Test",
+                ArtistId = 3,
+                Albums= new List<Album>()
+            };
+
+            Assert.That(() => logic.Create(fakeArtsit3), Throws.Nothing);
+        }
+
+        [Test]
+        public void DeleteTest()
+        {
+            Assert.That(() => logic.Delete(3), Throws.Nothing);
+        }
+
+        [Test]
+        public void UpdateTest()
+        {
+            fakeArtist1 = new Artist()
+            {
+                Name = "Sia",
+                ArtistId = 1,
+                Albums = new List<Album>()
+                {
+                    album1,
+                    album2,
+                }
+            };
+
+            Assert.That(() => logic.Update(fakeArtist1), Throws.Nothing);
         }
     }
 }
