@@ -92,10 +92,15 @@ namespace C8N5NZ_HFT_2022231.Test
         [Test]
         public void AlbumByLengthTest()
         {
-            var result = logic.AlbumByLength();
-            var expectedResult = new Dictionary<string, int> { { "FakeAlbum1", 12 }, { "FakeAlbum2", 8 } };
+            AlbumLengthStat lengthStat = new AlbumLengthStat()
+            {
+                AlbumTitle = song1.Album.AlbumTitle,
+                Length = 12,
+            };
 
-            Assert.That(result, Is.EqualTo(expectedResult));
+            var result = logic.AlbumByLength();
+
+            Assert.That(result.First(), Is.EqualTo(lengthStat));
         }
 
         [Test]

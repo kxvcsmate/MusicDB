@@ -109,10 +109,15 @@ namespace C8N5NZ_HFT_2022231.Test
         [Test]
         public void AVGRatingByArtistTest()
         {
-            var result = logic.AVGRatingByArtist();
-            var expectedResult = new Dictionary<string, double> { { "Eminem", 73 } };
+            AVGRating rating = new AVGRating()
+            {
+                ArtistName = album1.Artist.Name,
+                avgRating = 73,
+            };
 
-            Assert.That(result, Is.EqualTo(expectedResult));
+            var result = logic.AVGRatingByArtist();
+
+            Assert.That(result.First(), Is.EqualTo(rating));
         }
 
         [Test]
