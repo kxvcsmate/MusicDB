@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace C8N5NZ_HFT_2022231.WpfClient
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for StatWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StatWindow : Window
     {
-        public MainWindow()
+        public StatWindow()
         {
             InitializeComponent();
-            AlbumWindow albumWindow = new AlbumWindow();
-            albumWindow.Show();
-            SongWindow songWindow = new SongWindow();
-            songWindow.Show();
-            ArtistWindow artistWindow = new ArtistWindow();
-            artistWindow.Show();
         }
     }
 }

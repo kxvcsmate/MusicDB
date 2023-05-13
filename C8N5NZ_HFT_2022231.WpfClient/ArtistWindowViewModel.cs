@@ -13,7 +13,7 @@ using System.Windows.Input;
 
 namespace C8N5NZ_HFT_2022231.WpfClient
 {
-    class MainWindowViewModel : ObservableRecipient
+    class ArtistWindowViewModel : ObservableRecipient
     {
         public RestCollection<Artist> Artists { get; set; }
 
@@ -51,7 +51,7 @@ namespace C8N5NZ_HFT_2022231.WpfClient
             }
         }
 
-        public MainWindowViewModel()
+        public ArtistWindowViewModel()
         {
             if (!IsInDesignMode)
             {

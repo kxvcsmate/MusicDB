@@ -1,12 +1,11 @@
-﻿<Window x:Class="C8N5NZ_HFT_2022231.WpfClient.MainWindow"
+﻿<Window x:Class="C8N5NZ_HFT_2022231.WpfClient.StatWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:C8N5NZ_HFT_2022231.WpfClient"
         mc:Ignorable="d"
-        Title="Music Database" Height="450" Width="800">
-    
+        Title="StatWindow" Height="450" Width="800">
     <Grid>
         
     </Grid>

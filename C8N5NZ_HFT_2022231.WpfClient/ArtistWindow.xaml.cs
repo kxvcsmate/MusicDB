@@ -18,17 +18,11 @@ namespace C8N5NZ_HFT_2022231.WpfClient
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ArtistWindow : Window
     {
-        public MainWindow()
+        public ArtistWindow()
         {
             InitializeComponent();
-            AlbumWindow albumWindow = new AlbumWindow();
-            albumWindow.Show();
-            SongWindow songWindow = new SongWindow();
-            songWindow.Show();
-            ArtistWindow artistWindow = new ArtistWindow();
-            artistWindow.Show();
         }
     }
 }

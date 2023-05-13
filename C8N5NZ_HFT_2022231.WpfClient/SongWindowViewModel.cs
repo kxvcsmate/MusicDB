@@ -27,9 +27,11 @@ namespace C8N5NZ_HFT_2022231.WpfClient
                     selectedSong = new Song()
                     {
                         SongTitle = value.SongTitle,
+                        Length = value.Length,
                         SongId = value.SongId,
                     };
                     OnPropertyChanged();
+                    (UpdateSongCommand as RelayCommand).NotifyCanExecuteChanged();
                     (DeleteSongCommand as RelayCommand).NotifyCanExecuteChanged();
                 }
             }
@@ -59,7 +61,8 @@ namespace C8N5NZ_HFT_2022231.WpfClient
                 {
                     Songs.Add(new Song()
                     {
-                        SongTitle = SelectedSong.SongTitle
+                        SongTitle = SelectedSong.SongTitle,
+                        Length = SelectedSong.Length,
                     });
                 });
 

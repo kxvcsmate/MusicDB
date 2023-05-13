@@ -27,6 +27,8 @@ namespace C8N5NZ_HFT_2022231.WpfClient
                     selectedAlbum = new Album()
                     {
                         AlbumTitle = value.AlbumTitle,
+                        Rating = value.Rating,
+                        Release = value.Release,
                         AlbumId = value.AlbumId,
                     };
                     OnPropertyChanged();
@@ -59,7 +61,9 @@ namespace C8N5NZ_HFT_2022231.WpfClient
                 {
                     Albums.Add(new Album()
                     {
-                        AlbumTitle = SelectedAlbum.AlbumTitle
+                        AlbumTitle = SelectedAlbum.AlbumTitle,
+                        Rating = SelectedAlbum.Rating,
+                        Release = SelectedAlbum.Release,
                     });
                 });
 
