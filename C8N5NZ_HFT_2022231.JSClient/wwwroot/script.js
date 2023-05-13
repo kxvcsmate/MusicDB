@@ -1,5 +1,6 @@
 ﻿let artists = [];
 let connection = null;
+let artistIdToUpdate = -1;
 getdata();
 setupSignalR();
 
@@ -38,8 +39,9 @@ function display() {
     artists.forEach(t => {
         document.getElementById('resultarea').innerHTML +=
             "<tr><td>" + t.artistId + "</td><td>"
-            + t.Name + "</td><td>" +
-            `<button type="button" onclick="remove(${t.artistId})">Delete</button>`
+            + t.artistName + "</td><td>" +
+        `<button type="button" onclick="remove(${t.artistId})">Delete</button>` +
+        `<button type="button" onclick="showupdate(${t.artistId})">Update</button>`
             + "</td></tr>";
     });
 }
@@ -73,4 +75,27 @@ function remove(id) {
         })
         .catch((error) => { console.error('Error:', error); });
 
+}
+
+function update() {
+    document.getElementById('updateformdiv').style.display = 'none';
+    let name = document.getElementById('artistnametoupdate').value;
+    fetch('http://localhost:53770/artist', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify(
+            { artistName: name, artistId: artistIdToUpdate })
+    })
+        .then(response => response)
+        .then(data => {
+            console.log('Success:', data);
+            getdata();
+        })
+        .catch((error) => { console.error('Error:', error); });
+}
+
+function showupdate(id) {
+    document, getElementById('artistnametoupdate').value = artists.find(t => t['artistId'] == id)['artistName'];
+    document.getElementById('updateformdiv').style.display = 'felx';
+    artistIdToUpdate = id;
 }
