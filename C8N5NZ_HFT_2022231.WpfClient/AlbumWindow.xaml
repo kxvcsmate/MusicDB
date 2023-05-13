@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:C8N5NZ_HFT_2022231.WpfClient"
         mc:Ignorable="d"
-        Title="Album Editor" Height="450" Width="800">
+        Title="Album Editor" Height="500" Width="800">
     <Window.DataContext>
         <local:AlbumWindowViewModel />
     </Window.DataContext>
@@ -23,11 +23,11 @@
         </ListBox>
         <StackPanel Grid.Column="1">
             <Label Content="Name" Background="LightBlue" Padding="10" />
-            <TextBox Text="{Binding SelectedAlbum.AlbumTitle}" Padding="10" Margin="0,0,0,30" />
+            <TextBox Text="{Binding SelectedAlbum.AlbumTitle}" Padding="10" Margin="0,0,0,10" />
             <Label Content="Rating" Background="LightBlue" Padding="10" />
-            <TextBox Text="{Binding SelectedAlbum.Rating}" Padding="10" Margin="0,0,0,30" />
+            <TextBox Text="{Binding SelectedAlbum.Rating}" Padding="10" Margin="0,0,0,10" />
             <Label Content="Release" Background="LightBlue" Padding="10" />
-            <TextBox Text="{Binding SelectedAlbum.Release}" Padding="10" Margin="0,0,0,30" />
+            <TextBox Text="{Binding SelectedAlbum.Release}" Padding="10" Margin="0,0,0,10" />
             <Button Content="Create Album" Command="{Binding CreateAlbumCommand}" Margin="10" Padding="10" />
             <Button Content="Delete Album" Command="{Binding DeleteAlbumCommand}" Margin="10" Padding="10" />
             <Button Content="Update Album" Command="{Binding UpdateAlbumCommand}" Margin="10" Padding="10" />

@@ -5,9 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:C8N5NZ_HFT_2022231.WpfClient"
         mc:Ignorable="d"
-        Title="Music Database" Height="450" Width="800">
+        Title="Music Database" Height="450" Width="400">
     
-    <Grid>
-        
+    <Grid Background="DarkCyan">
+        <StackPanel>
+            <StackPanel.DataContext>
+                <local:MenuViewModel/>
+            </StackPanel.DataContext>
+            <Label Content="Guitar Database" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="22" Margin="0" Padding="20"/>
+            <Button x:Name="artists" Content="Artists" HorizontalContentAlignment="Center" FontSize="16" Margin="10" Height="50" Command="{Binding ArtistsCommand}"/>
+            <Button x:Name="albums" Content="Albums" HorizontalContentAlignment="Center" FontSize="16" Margin="10" Height="50" Command="{Binding AlbumsCommand}"/>
+            <Button x:Name="songs" Content="Songs" HorizontalContentAlignment="Center" FontSize="16" Margin="10" Height="50" Command="{Binding SongsCommand}"/>
+            <Button x:Name="statistics" Content="Statistics" HorizontalContentAlignment="Center" FontSize="16" Margin="10" Height="50" Command="{Binding StatisticsCommand}"/>
+        </StackPanel>
     </Grid>
 </Window>
