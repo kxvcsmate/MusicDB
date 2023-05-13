@@ -24,9 +24,16 @@ namespace C8N5NZ_HFT_2022231.Repository.ModelRepositories
         public override void Update(Album item)
         {
             var old = Read(item.AlbumId);
+            if (old == null)
+            {
+                throw new ArgumentException("Item not exist..");
+            }
             foreach (var prop in old.GetType().GetProperties())
             {
-                prop.SetValue(old, prop.GetValue(item));
+                if (prop.GetAccessors().FirstOrDefault(t => t.IsVirtual) == null)
+                {
+                    prop.SetValue(old, prop.GetValue(item));
+                }
             }
             ctx.SaveChanges();
         }

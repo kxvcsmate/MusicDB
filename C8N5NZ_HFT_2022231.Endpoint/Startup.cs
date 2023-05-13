@@ -1,3 +1,4 @@
+using C8N5NZ_HFT_2022231.Endpoint.Services;
 using C8N5NZ_HFT_2022231.Logic.Classes;
 using C8N5NZ_HFT_2022231.Logic.Interfaces;
 using C8N5NZ_HFT_2022231.Models;
@@ -44,6 +45,8 @@ namespace C8N5NZ_HFT_2022231.Endpoint
             services.AddTransient<IArtistLogic, ArtistLogic>();
             services.AddTransient<ISongLogic, SongLogic>();
 
+            services.AddSignalR();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -68,13 +71,22 @@ namespace C8N5NZ_HFT_2022231.Endpoint
                 await context.Response.WriteAsJsonAsync(response);
             }));
 
+            app.UseCors(x => x
+                .AllowCredentials()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithOrigins("http://localhost:12861"));
+
             app.UseRouting();
+
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }
