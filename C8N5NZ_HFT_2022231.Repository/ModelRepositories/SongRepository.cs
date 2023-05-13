@@ -1,6 +1,7 @@
 ﻿using C8N5NZ_HFT_2022231.Models;
 using C8N5NZ_HFT_2022231.Repository.Database;
 using C8N5NZ_HFT_2022231.Repository.GenericRepository;
+using C8N5NZ_HFT_2022231.Repository.Intefaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace C8N5NZ_HFT_2022231.Repository.ModelRepositories
 {
-    public class SongRepository : Repository<Song>
+    public class SongRepository : Repository<Song>, IRepository<Song>
     {
         public SongRepository(MusicDbContext ctx) : base(ctx)
         {
