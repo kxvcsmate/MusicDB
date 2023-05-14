@@ -1,0 +1,22 @@
+﻿.container {
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: auto;
+    padding: 30px;
+}
+
+.col-6 {
+    text-align: center;
+    height: 60px;
+    margin: 20px;
+}
+
+a {
+    margin: 50px;
+    padding: 20px;
+    text-align: center;
+}

@@ -34,12 +34,22 @@ function setupSignalR() {
     start();
 }
 
+async function start() {
+    try {
+        await connection.start();
+        console.log("SignalR Connected.");
+    } catch (err) {
+        console.log(err);
+        setTimeout(start, 5000);
+    }
+};
+
 function display() {
     document.getElementById('resultarea').innerHTML = "";
     artists.forEach(t => {
         document.getElementById('resultarea').innerHTML +=
             "<tr><td>" + t.artistId + "</td><td>"
-            + t.artistName + "</td><td>" +
+            + t.name + "</td><td>" +
         `<button type="button" onclick="remove(${t.artistId})">Delete</button>` +
         `<button type="button" onclick="showupdate(${t.artistId})">Update</button>`
             + "</td></tr>";
@@ -47,12 +57,12 @@ function display() {
 }
 
 function create() {
-    let name = document.getElementById('artistname').value;
+    let artistname = document.getElementById('artistname').value;
     fetch('http://localhost:53770/artist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
-            { artistName: name })
+            { name: artistname })
     })
         .then(response => response)
         .then(data => {
@@ -79,12 +89,12 @@ function remove(id) {
 
 function update() {
     document.getElementById('updateformdiv').style.display = 'none';
-    let name = document.getElementById('artistnametoupdate').value;
+    let artistname = document.getElementById('artistnametoupdate').value;
     fetch('http://localhost:53770/artist', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
-            { artistName: name, artistId: artistIdToUpdate })
+            { name: artistname, artistId: artistIdToUpdate })
     })
         .then(response => response)
         .then(data => {
@@ -95,7 +105,7 @@ function update() {
 }
 
 function showupdate(id) {
-    document, getElementById('artistnametoupdate').value = artists.find(t => t['artistId'] == id)['artistName'];
+    document, getElementById('artistnametoupdate').value = artists.find(t => t['artistId'] == id)['name'];
     document.getElementById('updateformdiv').style.display = 'felx';
     artistIdToUpdate = id;
 }

@@ -2,37 +2,26 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Artist UI</title>
-    <link rel="stylesheet" href="style.css" />
+    <title></title>
+    <link rel="stylesheet" href="css/indexStyle.css" />
 </head>
 <body>
-    <h1>Artist Catalog</h1>
-
-    <div id="formdiv">
-        <label>Artist Name</label>
-        <input type="text" id="artistname" />
-        <button type="button" onclick="create()">Add Artist</button>
+    <div class="container">
+        <h1 class="justify-content-center">Music Database</h1>
+        <div class="row row-cols-6 justify-content-center">
+            <div class="col-6">
+                <a class="btn col-6 btn-dark text-center" href="artist.html">Artists</a>
+            </div>
+            <div class="col-6">
+                <a class="btn col-6 btn-dark text-center" href="album.html">Albums</a>
+            </div>
+            <div class="col-6">
+                <a class="btn col-6 btn-dark text-center" href="song.html">Songs</a>
+            </div>
+            <div class="col-6">
+                <a class="btn col-6 btn-dark text-center" href="stat.html">Statistics</a>
+            </div>
+        </div>
     </div>
-
-    <div id="updateformdiv">
-        <label>Artist Name</label>
-        <input type="text" id="artistnametoupdate" />
-        <button type="button" onclick="update()">Update Artist</button>
-    </div>
-
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="resultarea">
-        </tbody>
-    </table>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>

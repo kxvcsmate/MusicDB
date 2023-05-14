@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Song UI</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Song Catalog</h1>
+
+    <div id="formdiv">
+        <label>Song Name</label>
+        <input type="text" id="songname" />
+        <label>Length</label>
+        <input type="text" id="length" />
+        <button type="button" onclick="create()">Add Song</button>
+    </div>
+
+    <div id="updateformdiv">
+        <label>Song Name</label>
+        <input type="text" id="songnametoupdate" />
+        <label>Length</label>
+        <input type="text" id="lengthtoupdate" />
+        <button type="button" onclick="update()">Update Song</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Length</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultarea">
+        </tbody>
+    </table>
+    <a class="btn btn-dark" href="index.html">Back</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="songScript.js"></script>
+</body>
+</html>

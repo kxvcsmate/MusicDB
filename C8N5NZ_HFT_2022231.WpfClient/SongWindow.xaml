@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:C8N5NZ_HFT_2022231.WpfClient"
         mc:Ignorable="d"
-        Title="SongWindow" Height="450" Width="800">
+        Title="Song Editor" Height="450" Width="800">
     <Window.DataContext>
         <local:SongWindowViewModel />
     </Window.DataContext>
-    <Grid>
+    <Grid Background="DarkCyan">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>

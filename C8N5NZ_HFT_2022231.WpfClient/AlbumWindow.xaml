@@ -9,7 +9,7 @@
     <Window.DataContext>
         <local:AlbumWindowViewModel />
     </Window.DataContext>
-    <Grid>
+    <Grid Background="DarkCyan">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>

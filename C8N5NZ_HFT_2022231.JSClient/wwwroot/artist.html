@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Artist UI</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Artist Catalog</h1>
+
+    <div id="formdiv">
+        <label>Artist Name</label>
+        <input type="text" id="artistname" />
+        <button type="button" onclick="create()">Add Artist</button>
+    </div>
+
+    <div id="updateformdiv">
+        <label>Artist Name</label>
+        <input type="text" id="artistnametoupdate" />
+        <button type="button" onclick="update()">Update Artist</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultarea">
+        </tbody>
+    </table>
+    <a class="btn btn-dark" href="index.html">Back</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="artistScript.js"></script>
+</body>
+</html>

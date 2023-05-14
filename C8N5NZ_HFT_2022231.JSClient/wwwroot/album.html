@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Album UI</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Album Catalog</h1>
+
+    <div id="formdiv">
+        <label>Album Name</label>
+        <input type="text" id="albumname" />
+        <label>Rating</label>
+        <input type="text" id="rating" />
+        <label>Release date</label>
+        <input type="text" id="releasedate" />
+        <button type="button" onclick="create()">Add Album</button>
+    </div>
+
+    <div id="updateformdiv">
+        <label>Album Name</label>
+        <input type="text" id="albumnametoupdate" />
+        <label>Rating</label>
+        <input type="text" id="ratingtoupdate" />
+        <label>Release date</label>
+        <input type="text" id="releasedatetoupdate" />
+        <button type="button" onclick="update()">Update Album</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Rating</th>
+                <th>Release</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultarea">
+        </tbody>
+    </table>
+    <a class="btn btn-dark" href="index.html">Back</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="albumScript.js"></script>
+</body>
+</html>

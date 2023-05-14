@@ -79,8 +79,6 @@ namespace C8N5NZ_HFT_2022231.Endpoint
 
             app.UseRouting();
 
-            app.UseStaticFiles();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -12,7 +12,11 @@
             <StackPanel.DataContext>
                 <local:MenuViewModel/>
             </StackPanel.DataContext>
-            <Label Content="Guitar Database" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="22" Margin="0" Padding="20"/>
+            <Label Content="Music Database" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="22" Margin="0" Padding="40">
+                <Label.Foreground>
+                    <SolidColorBrush Color="White"></SolidColorBrush>
+                </Label.Foreground>
+            </Label>
             <Button x:Name="artists" Content="Artists" HorizontalContentAlignment="Center" FontSize="16" Margin="10" Height="50" Command="{Binding ArtistsCommand}"/>
             <Button x:Name="albums" Content="Albums" HorizontalContentAlignment="Center" FontSize="16" Margin="10" Height="50" Command="{Binding AlbumsCommand}"/>
             <Button x:Name="songs" Content="Songs" HorizontalContentAlignment="Center" FontSize="16" Margin="10" Height="50" Command="{Binding SongsCommand}"/>
