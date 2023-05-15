@@ -5,13 +5,12 @@ getdata();
 setupSignalR();
 
 async function getdata() {
-    fetch('http://localhost:53770/artist')
-        .then(x => x.json())
-        .then(y => {
-            artist = y;
-            console.log(artist);
-            display();
-        });
+    await fetch('http://localhost:53770/artist')
+            .then(x => x.json())
+            .then(y => {
+                artist = y;
+                display();
+            });
 }
 
 function setupSignalR() {
@@ -27,6 +26,10 @@ function setupSignalR() {
     connection.on("ArtistDeleted", (user, message) => {
         getdata();
     });
+
+    connection.on("ArtistUpdated", (user, message) => {
+        getdata();
+    })
 
     connection.onclose(async () => {
         await start();
