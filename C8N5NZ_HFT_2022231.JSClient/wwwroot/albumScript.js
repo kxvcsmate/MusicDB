@@ -80,7 +80,7 @@ function create() {
     let albumname = document.getElementById('albumname').value;
     let rating = document.getElementById('rating').value;
     let releasedate = document.getElementById('releasedate').value;
-    fetch('http://localhost:5684/album', {
+    fetch('http://localhost:53770/album', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
@@ -95,13 +95,12 @@ function create() {
             getdata();
         })
         .catch((error) => { console.error('Error:', error); });
-
 }
 
 function showupdate(id) {
-    document.getElementById('albumnametoupdate').value = artists.find(t => t['albumId'] == id)['albumTitle'];
-    document.getElementById('ratingtoupdate').value = artists.find(t => t['albumId'] == id)['rating'];
-    document.getElementById('releasedatetoupdate').value = artists.find(t => t['albumId'] == id)['release'];
+    document.getElementById('albumnametoupdate').value = albums.find(t => t['albumId'] == id)['albumTitle'];
+    document.getElementById('ratingtoupdate').value = albums.find(t => t['albumId'] == id)['rating'];
+    document.getElementById('releasedatetoupdate').value = albums.find(t => t['albumId'] == id)['release'];
     artistid = albums.find(t => t['albumId'] == id)['artistId'];
     document.getElementById('updateformdiv').style.display = 'flex';
     albumIdToUpdate = id;

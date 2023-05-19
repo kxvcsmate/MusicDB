@@ -79,7 +79,7 @@ function remove(id) {
 function create() {
     let songname = document.getElementById('songname').value;
     let length = document.getElementById('length').value;
-    fetch('http://localhost:5684/song', {
+    fetch('http://localhost:53770/song', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
@@ -97,9 +97,9 @@ function create() {
 }
 
 function showupdate(id) {
-    document.getElementById('songnametoupdate').value = artists.find(t => t['songId'] == id)['songTitle'];
-    document.getElementById('lengthtoupdate').value = artists.find(t => t['songId'] == id)['length'];
-    albumid = albums.find(t => t['songId'] == id)['albumId'];
+    document.getElementById('songnametoupdate').value = songs.find(t => t['songId'] == id)['songTitle'];
+    document.getElementById('lengthtoupdate').value = songs.find(t => t['songId'] == id)['length'];
+    albumid = songs.find(t => t['songId'] == id)['albumId'];
     document.getElementById('updateformdiv').style.display = 'flex';
     songIdToUpdate = id;
 }

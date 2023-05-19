@@ -2,9 +2,81 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Stat UI</title>
+    <link rel="stylesheet" href="css/indexStyle.css" />
+    <title>Statistics UI</title>
 </head>
 <body>
+    <div class="container">
+        <div id="content">
+            <h1 class="align-content-center">Statistic Catalog</h1>
 
+            <h2>The number of songs by albums</h2>
+            <table class="table col-md-6">
+                <thead class="justify-content-center">
+                    <tr class="align-content-center">
+                        <th>Album title</th>
+                        <th>Number of songs</th>
+                    </tr>
+                </thead>
+                <tbody id="resultarea">
+                </tbody>
+            </table>
+
+            <h2>The number of albums by artists</h2>
+            <table class="table col-md-6">
+                <thead class="justify-content-center">
+                    <tr class="align-content-center">
+                        <th>Artist name</th>
+                        <th>Number of albums</th>
+                    </tr>
+                </thead>
+                <tbody id="resultarea2">
+                </tbody>
+            </table>
+
+            <h2>The average ratings by artists</h2>
+            <table class="table col-md-6">
+                <thead class="justify-content-center">
+                    <tr class="align-content-center">
+                        <th>Artist name</th>
+                        <th>Average rating</th>
+                    </tr>
+                </thead>
+                <tbody id="resultarea3">
+                </tbody>
+            </table>
+
+            <h2>The albums by length</h2>
+            <table class="table col-md-6">
+                <thead class="justify-content-center">
+                    <tr class="align-content-center">
+                        <th>Album title</th>
+                        <th>Length</th>
+                    </tr>
+                </thead>
+                <tbody id="resultarea4">
+                </tbody>
+            </table>
+
+            <h2>The songs by given length</h2>
+            <label>Length (2-7)</label>
+            <input type="text" id="givenlength" />
+            <button type="button" onclick="search()">List</button>
+            <table class="table col-md-6">
+                <thead class="justify-content-center">
+                    <tr class="align-content-center">
+                        <th>Song title</th>
+                        <th>Length</th>
+                    </tr>
+                </thead>
+                <tbody id="resultarea5">
+                </tbody>
+            </table>
+            <a class="btn btn-dark" href="index.html">Back</a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="statScript.js"></script>
 </body>
 </html>

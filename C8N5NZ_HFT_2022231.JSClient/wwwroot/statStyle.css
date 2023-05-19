@@ -1,0 +1,42 @@
+﻿.container {
+    position: absolute;
+}
+
+#content {
+    margin: 30px;
+}
+
+#guitarupdate {
+    display: none;
+}
+
+#consumerupdate {
+    display: none;
+}
+
+#brandupdate {
+    display: none;
+}
+
+h1 {
+    padding: 20px, 0px, 20px, 0px;
+}
+
+h2 {
+    color: mediumpurple;
+}
+
+form {
+    padding: 20px, 0px, 20px, 0px;
+    margin: 30px;
+}
+
+html {
+    font-size: 14px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
