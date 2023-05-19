@@ -22,6 +22,7 @@ namespace C8N5NZ_HFT_2022231.WpfClient
         public ObservableCollection<ArtistStat> Results3 { get; set; }
         public ObservableCollection<AlbumLengthStat> Results4 { get; set; }
         public ObservableCollection<Song> Results5 { get; set; }
+        public int SongLength { get; set; }
 
         private IEnumerable<AVGRating> avgRatingByArtist;
 
@@ -29,8 +30,8 @@ namespace C8N5NZ_HFT_2022231.WpfClient
         {
             get { return avgRatingByArtist; }
             set { avgRatingByArtist = value; }
-        }
-
+        }        
+        
         private IEnumerable<AlbumStat> numberOfSongsByAlbum;
 
         public IEnumerable<AlbumStat> NumberOfSongsByAlbum
@@ -63,7 +64,6 @@ namespace C8N5NZ_HFT_2022231.WpfClient
             set { getSongsByLength = value; }
         }
 
-
         public ICommand AVGRatingByArtistCommand { get; set; }
         public ICommand NumberOfSongsByAlbumCommand { get; set; }
         public ICommand NumberOfAlbumsByArtistCommand { get; set; }
@@ -94,7 +94,7 @@ namespace C8N5NZ_HFT_2022231.WpfClient
                 AVGRatingByArtistCommand = new RelayCommand(() =>
                 {
                     Results.Clear();
-                    AVGRatingByArtist = Rest.Get<AVGRating>("stat/avgratingbyartist");
+                    AVGRatingByArtist = Rest.Get<AVGRating>("Stat/AVGRatingByArtist");
                     foreach (var item in AVGRatingByArtist)
                     {
                         Results.Add(new AVGRating()
@@ -108,7 +108,7 @@ namespace C8N5NZ_HFT_2022231.WpfClient
                 NumberOfSongsByAlbumCommand = new RelayCommand(() =>
                 {
                     Results2.Clear();
-                    NumberOfSongsByAlbum = Rest.Get<AlbumStat>("stat/numberofsongsbyalbum");
+                    NumberOfSongsByAlbum = Rest.Get<AlbumStat>("Stat/NumberOfSongsByAlbum");
                     foreach (var item in NumberOfSongsByAlbum)
                     {
                         Results2.Add(new AlbumStat()
@@ -122,7 +122,7 @@ namespace C8N5NZ_HFT_2022231.WpfClient
                 NumberOfAlbumsByArtistCommand = new RelayCommand(() =>
                 {
                     Results3.Clear();
-                    NumberOfAlbumsByArtist = Rest.Get<ArtistStat>("stat/numberofalbumsbyartist");
+                    NumberOfAlbumsByArtist = Rest.Get<ArtistStat>("Stat/NumberOfAlbumsByArtist");
                     foreach (var item in NumberOfAlbumsByArtist)
                     {
                         Results3.Add(new ArtistStat()
@@ -136,7 +136,7 @@ namespace C8N5NZ_HFT_2022231.WpfClient
                 AlbumByLengthCommand = new RelayCommand(() =>
                 {
                     Results4.Clear();
-                    AlbumByLength = Rest.Get<AlbumLengthStat>("stat/albumbylength");
+                    AlbumByLength = Rest.Get<AlbumLengthStat>("Stat/AlbumByLength");
                     foreach (var item in AlbumByLength)
                     {
                         Results4.Add(new AlbumLengthStat()
@@ -150,7 +150,7 @@ namespace C8N5NZ_HFT_2022231.WpfClient
                 GetSongsByLengthCommand = new RelayCommand(() =>
                 {
                     Results5.Clear();
-                    GetSongsByLength = Rest.Get<Song>("stat/getsongsbylength");
+                    GetSongsByLength = Rest.Get<Song>($"Stat/GetSongsByLength?length={SongLength}");
                     foreach (var item in GetSongsByLength)
                     {
                         Results5.Add(new Song()

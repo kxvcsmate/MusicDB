@@ -5,6 +5,15 @@ let artistid = 1;
 getdata();
 setupSignalR();
 
+async function getdata() {
+    await fetch('http://localhost:53770/album')
+        .then(x => x.json())
+        .then(y => {
+            albums = y;
+            display();
+        });
+}
+
 function setupSignalR() {
     connection = new signalR.HubConnectionBuilder()
         .withUrl("http://localhost:53770/hub")
@@ -90,11 +99,11 @@ function create() {
 }
 
 function showupdate(id) {
-    document, getElementById('albumnametoupdate').value = artists.find(t => t['albumId'] == id)['albumTitle'];
-    document, getElementById('ratingtoupdate').value = artists.find(t => t['albumId'] == id)['rating'];
-    document, getElementById('releasedatetoupdate').value = artists.find(t => t['albumId'] == id)['release'];
+    document.getElementById('albumnametoupdate').value = artists.find(t => t['albumId'] == id)['albumTitle'];
+    document.getElementById('ratingtoupdate').value = artists.find(t => t['albumId'] == id)['rating'];
+    document.getElementById('releasedatetoupdate').value = artists.find(t => t['albumId'] == id)['release'];
     artistid = albums.find(t => t['albumId'] == id)['artistId'];
-    document.getElementById('updateformdiv').style.display = 'felx';
+    document.getElementById('updateformdiv').style.display = 'flex';
     albumIdToUpdate = id;
 }
 

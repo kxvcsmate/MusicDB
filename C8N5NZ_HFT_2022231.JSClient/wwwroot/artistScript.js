@@ -8,7 +8,7 @@ async function getdata() {
     await fetch('http://localhost:53770/artist')
             .then(x => x.json())
             .then(y => {
-                artist = y;
+                artists = y;
                 display();
             });
 }
@@ -108,7 +108,7 @@ function update() {
 }
 
 function showupdate(id) {
-    document, getElementById('artistnametoupdate').value = artists.find(t => t['artistId'] == id)['name'];
-    document.getElementById('updateformdiv').style.display = 'felx';
+    document.getElementById('artistnametoupdate').value = artists.find(t => t['artistId'] == id)['name'];
+    document.getElementById('updateformdiv').style.display = 'flex';
     artistIdToUpdate = id;
 }

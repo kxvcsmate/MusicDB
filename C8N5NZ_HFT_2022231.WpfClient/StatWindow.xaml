@@ -5,29 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:C8N5NZ_HFT_2022231.WpfClient"
         mc:Ignorable="d"
-        Title="StatWindow" Height="450" Width="800">
+        Title="StatWindow" Height="450" Width="1100">
     <Window.DataContext>
         <local:StatWindowViewModel/>
     </Window.DataContext>
     <Grid Background="DarkCyan">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="210"/>
         </Grid.ColumnDefinitions>
         <StackPanel>
-            <Button Grid.Column="0" Margin="10" Padding="10" Content="Show average ratings by artists" FontSize="16" Command="{Binding AVGRatingByArtistCommand}"/>
+            <Button Grid.Column="0" Margin="10,30,10,10" Padding="10" Content="Show average ratings by artists" FontSize="16" Command="{Binding AVGRatingByArtistCommand}"/>
             <Button Grid.Column="0" Margin="10" Padding="10" Content="Show number of songs by albums" FontSize="16" Command="{Binding NumberOfSongsByAlbumCommand}"/>
             <Button Grid.Column="0" Margin="10" Padding="10" Content="Show number of albums by artists" FontSize="16" Command="{Binding NumberOfAlbumsByArtistCommand}"/>
             <Button Grid.Column="0" Margin="10" Padding="10" Content="Show albums by length" FontSize="16" Command="{Binding AlbumByLengthCommand}"/>
-            <Label Content="Songs's length (1 - 10)" Margin="10,10,10,0" Padding="5" Background="LightBlue" />
-            <TextBox x:Name="lenght" Margin="10,0,10,0" Padding="10" />
+            <Label Content="Songs's length (2 - 7)" Margin="10,10,10,0" Padding="5" Background="LightBlue" />
+            <TextBox Text="{Binding SongLength}" Margin="10,0,10,0" Padding="10" />
             <Button Grid.Column="0" Margin="10" Padding="10" Content="Get songs by length" FontSize="16" Command="{Binding GetSongsByLengthCommand}"/>
         </StackPanel>
-        
+
         <ListView Grid.Column="1" ItemsSource="{Binding Results}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">                        
                         <TextBlock Text="{Binding ArtistName}"/>
                         <TextBlock Text=" - "/>
                         <TextBlock Text="{Binding avgRating}"/>
@@ -36,7 +40,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Column="1" ItemsSource="{Binding Results2}">
+        <ListView Grid.Column="2" ItemsSource="{Binding Results2}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -48,7 +52,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Column="1" ItemsSource="{Binding Results3}">
+        <ListView Grid.Column="3" ItemsSource="{Binding Results3}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -60,7 +64,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Column="1" ItemsSource="{Binding Results4}">
+        <ListView Grid.Column="4" ItemsSource="{Binding Results4}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -72,7 +76,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ListView Grid.Column="1" ItemsSource="{Binding Results5}">
+        <ListView Grid.Column="5" ItemsSource="{Binding Results5}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

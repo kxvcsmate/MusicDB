@@ -5,6 +5,15 @@ let albumid = 1;
 getdata();
 setupSignalR();
 
+async function getdata() {
+    await fetch('http://localhost:53770/song')
+        .then(x => x.json())
+        .then(y => {
+            songs = y;
+            display();
+        });
+}
+
 function setupSignalR() {
     connection = new signalR.HubConnectionBuilder()
         .withUrl("http://localhost:53770/hub")
@@ -46,8 +55,8 @@ function display() {
         document.getElementById('resultarea').innerHTML +=
             "<tr><td>" + t.songId + "</td><td>"
             + t.songTitle + "</td><td>" + t.length + "</td><td>" + 
-            `<button type="button" onclick="remove(${t.albumId})">Delete</button>` + "  " +
-            `<button type="button" onclick="showupdate(${t.albumId})">Update</button>`
+            `<button type="button" onclick="remove(${t.songId})">Delete</button>` + "  " +
+            `<button type="button" onclick="showupdate(${t.songId})">Update</button>`
             + "</td></tr>";
     });
 }
@@ -88,10 +97,10 @@ function create() {
 }
 
 function showupdate(id) {
-    document, getElementById('songnametoupdate').value = artists.find(t => t['songId'] == id)['songTitle'];
-    document, getElementById('lengthtoupdate').value = artists.find(t => t['songId'] == id)['length'];
+    document.getElementById('songnametoupdate').value = artists.find(t => t['songId'] == id)['songTitle'];
+    document.getElementById('lengthtoupdate').value = artists.find(t => t['songId'] == id)['length'];
     albumid = albums.find(t => t['songId'] == id)['albumId'];
-    document.getElementById('updateformdiv').style.display = 'felx';
+    document.getElementById('updateformdiv').style.display = 'flex';
     songIdToUpdate = id;
 }
 
